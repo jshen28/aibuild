@@ -97,6 +97,12 @@ gitlab/gitlab-ce
 ```
 账户：root/Lc13yfwpW
 
+* 配置webhook
+
+首先在jenkins中选择项目，在build trigger中，选择`Build when a change is pushed to GitLab`，点击`advanced`，点击`generate`复制secret token并保存修改。（webhook的url在选项中）
+
+然后在gitlab中，选择settings->integration，复制上一步中得到的jenkins webhook的url和secret。保存配置，点击edit按钮，点击test->push events测试能否正常调用webhook。
+
 ### aibuild server
 * 安装qemu，kvm
 ``` bash
