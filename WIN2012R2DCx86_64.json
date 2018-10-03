@@ -1,16 +1,7 @@
 {
-    "variables": {
-      "vm_name":"{{ user `vmname` }}",
-      "disk_size": "40960",
-      "iso_url": "{{ user `isourl` }}",
-      "iso_checksum": "a69276d600d9621d3b0ab465e5700b6e",
-      "iso_checksum_type": "md5",
-      "floppy_files_list": "drivers/virtio-win-0.1.141/viostor/2k12R2/amd64/*,drivers/virtio-win-0.1.141/NetKVM/2k12R2/amd64/*,scripts/*"
-    },
     "builders": [
       {
-        "vm_name": "{{user `vm_name`}}",
-        "qemu_binary": "{{user `qemu_binary`}}",
+        "vm_name": "{{user `vmname`}}",
         "output_directory": "{{ user `outdir` }}",
         "type": "qemu",
         "accelerator": "kvm",
@@ -20,11 +11,11 @@
         "headless": true,
         "boot_wait": "2m",
         "format": "qcow2",
-        "disk_size": "{{user `disk_size`}}",
+        "disk_size": "40960",
         "disk_interface": "virtio",
-        "iso_url": "{{user `iso_url`}}",
-        "iso_checksum": "{{user `iso_checksum`}}",
-        "iso_checksum_type": "{{user `iso_checksum_type`}}",
+        "iso_url": "{{user `isourl`}}",
+        "iso_checksum": "a69276d600d9621d3b0ab465e5700b6e",
+        "iso_checksum_type": "md5",
         "vnc_bind_address": "0.0.0.0",
         "shutdown_command": "a:\\sysprep.bat",
         "shutdown_timeout": "1h",
@@ -33,7 +24,7 @@
         "winrm_password": "Lc13yfwpW",
         "winrm_timeout": "1h",
         "http_directory": ".",
-        "floppy_files": "{{ user `floppy_files_list` }}"
+        "floppy_files": "drivers/virtio-win-0.1.141/viostor/2k12R2/amd64/*,drivers/virtio-win-0.1.141/NetKVM/2k12R2/amd64/*,scripts/*"
       }
     ]
   }
