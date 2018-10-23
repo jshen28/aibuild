@@ -14,7 +14,7 @@
         "disk_size": "40960",
         "disk_interface": "virtio",
         "iso_url": "{{user `isourl`}}",
-        "iso_checksum": "a69276d600d9621d3b0ab465e5700b6e",
+        "iso_checksum": "45f5933c474bfb9da28b7fef0bdf96c6",
         "iso_checksum_type": "md5",
         "vnc_bind_address": "0.0.0.0",
         "shutdown_command": "a:\\sysprep.bat",
@@ -24,7 +24,7 @@
         "winrm_password": "Lc13yfwpW",
         "winrm_timeout": "1h",
         "http_directory": ".",
-        "floppy_files": "drivers/viostor/2k12R2/amd64/*,drivers/NetKVM/2k12R2/amd64/*,scripts/*"
+        "floppy_files": "drivers/viostor/win10/amd64/*,drivers/NetKVM/win10/amd64/*,scripts/*"
       }
     ]
   }

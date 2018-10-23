@@ -7,13 +7,14 @@ if [[ ! -x $PACKER_EXEC ]]; then
 fi
 echo $PACKER_EXEC
 
-ISOURL="http://172.23.11.11/iso/windows/2012R2/SW_DVD9_Windows_Svr_Std_and_DataCtr_2012_R2_64Bit_ChnSimp_-4_MLF_X19-82889.ISO"
-OUTDIR=/tmp/WIN2012R2DC-$BUILD_TAG
-IMGNAME=WIN2012R2DCx86_64-$BUILD_TAG.qcow2
+ISOURL="http://172.23.61.4/isos/cn_windows_10_consumer_edition_version_1803_updated_sep_2018_x64_dvd_a3fcbed0.iso"
+OUTDIR=/tmp/WIN10-$BUILD_TAG
+IMGNAME=WIN10-$BUILD_TAG.qcow2
 
 echo "Build: "$BUILD_TAG
 echo "GIT_COMMIT: "$GIT_COMMIT
 
+WORKSPACE=/opt/sjt/windows2012r2dc-tpl
 echo "Workspace: "$WORKSPACE
 cd $WORKSPACE
 $PACKER_EXEC build -var "outdir=$OUTDIR" -var "vmname=$IMGNAME" -var "isourl=$ISOURL" WIN2012R2DCx86_64.json
@@ -25,7 +26,7 @@ generate_post_data()
     "image_name":"$IMGNAME",
     "os_type":"Windows",
     "os_distro":"Windows",
-    "os_ver":"2012 R2 DC",
+    "os_ver":"10 1803",
     "from_iso":"$ISOURL",
     "update_contents":"$GIT_COMMIT"
 }

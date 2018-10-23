@@ -14,15 +14,15 @@ function UnzipFile([string]$souceFile, [string]$targetFolder)
 # 针对windows 2012 Disable Network Level Authentication 否则会提示安全漏洞
 (Get-WmiObject -class Win32_TSGeneralSetting -Namespace root\cimv2\terminalservices -Filter "TerminalName='RDP-tcp'").SetUserAuthenticationRequired(0)
 
-$url = "http://172.23.11.11/soft/cloud_init/2018/windows/2k12R2/Balloon.zip"
+$url = "http://172.23.61.4/soft/cloud_init/2018/windows/win10/Balloon.zip"
 (new-object System.Net.WebClient).DownloadFile($url, "C:\Windows\Temp\Balloon.zip")
 
 UnzipFile "C:\Windows\Temp\Balloon.zip" "C:\Windows\Temp\"
-PnPutil.exe -i -a "C:\Windows\Temp\Balloon\2k12R2\amd64\balloon.inf"
+PnPutil.exe -i -a "C:\Windows\Temp\balloon.inf"
 
 
 # 下载串口驱动
-$url = "http://172.23.11.11/soft/cloud_init/2018/windows/2k12R2/vioserial.zip"
+$url = "http://172.23.61.4/soft/cloud_init/2018/windows/win10/vioserial.zip"
 (new-object System.Net.WebClient).DownloadFile($url, "C:\Windows\Temp\vioserial.zip")
 
 ## 下载串口ddl
@@ -34,7 +34,7 @@ Move-Item -Path "C:\Windows\Temp\dlls\*" -Destination "C:\Windows\System32\"
 
 # 安装驱动
 UnzipFile "C:\Windows\Temp\vioserial.zip" "C:\Windows\Temp\"
-PnPutil.exe -i -a "C:\Windows\Temp\vioserial\2k12R2\amd64\vioser.inf"
+PnPutil.exe -i -a "C:\Windows\Temp\vioserial\win10\amd64\vioser.inf"
 
 # 安装Qga
 $url = "http://172.23.11.11/repo/qga/windows/qemu-ga-x64.msi"
