@@ -54,7 +54,7 @@
       </ImageInstall>
       <UserData>
           <ProductKey>
-<!--            <Key>D2N9P-3P6X9-2R39C-7RTCD-MDVJX</Key> -->
+            <Key>VK7JG-NPHTM-C97JM-9MPGT-3V66T</Key>
             <WillShowUI>OnError</WillShowUI>
         </ProductKey>
 	        <AcceptEula>true</AcceptEula>
@@ -64,6 +64,7 @@
       <SetupUILanguage>
 	<UILanguage>zh-CN</UILanguage>
       </SetupUILanguage>
+      <InputLocale>zh-CN</InputLocale>
       <SystemLocale>zh-CN</SystemLocale>
       <UILanguage>zh-CN</UILanguage>
       <UserLocale>zh-CN</UserLocale>
@@ -90,6 +91,7 @@
       <OOBE>
         <HideEULAPage>true</HideEULAPage>
         <ProtectYourPC>3</ProtectYourPC>
+        <SkipMachineOOBE>true</SkipMachineOOBE>
       </OOBE>
       <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">

@@ -18,11 +18,11 @@
         "iso_checksum_type": "md5",
         "vnc_bind_address": "0.0.0.0",
         "shutdown_command": "a:\\sysprep.bat",
-        "shutdown_timeout": "1h",
+        "shutdown_timeout": "2h",
         "communicator": "winrm",
         "winrm_username": "administrator",
         "winrm_password": "Lc13yfwpW",
-        "winrm_timeout": "1h",
+        "winrm_timeout": "2h",
         "http_directory": ".",
         "floppy_files": "drivers/viostor/win10/amd64/*,drivers/NetKVM/win10/amd64/*,scripts/*"
       }

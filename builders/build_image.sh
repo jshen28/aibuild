@@ -8,8 +8,10 @@ fi
 echo $PACKER_EXEC
 
 ISOURL="http://172.23.61.4/isos/cn_windows_10_consumer_edition_version_1803_updated_sep_2018_x64_dvd_a3fcbed0.iso"
+BUILD_TAG=sjt-test
 OUTDIR=/tmp/WIN10-$BUILD_TAG
 IMGNAME=WIN10-$BUILD_TAG.qcow2
+GIT_COMMIT=sjt-test
 
 echo "Build: "$BUILD_TAG
 echo "GIT_COMMIT: "$GIT_COMMIT
@@ -35,13 +37,13 @@ EOF
 
 if [[ -e "$OUTDIR/$IMGNAME" ]]; then
     # Need add dns mapping for aibuild-server.com and hostip
-    curl --header "Content-Type: application/json" \
-      --request POST \
-      --data "$(generate_post_data)" \
-      http://aibuild-server.com:9753/v1/build
+    #curl --header "Content-Type: application/json" \
+    #  --request POST \
+    #  --data "$(generate_post_data)" \
+    #  http://aibuild-server.com:9753/v1/build
 
     # Move image to build dir
-    mv $OUTDIR/$IMGNAME /var/www/html/images/build/
+    mv $OUTDIR/$IMGNAME /tmp
 else
     echo "Image not generated successfully"
     exit 1
